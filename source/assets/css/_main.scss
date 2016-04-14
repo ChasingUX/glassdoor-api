@@ -1,0 +1,261 @@
+$font-path: '../fonts/';
+$blue: blue;
+$transparent: rgba(0,0,0,0);
+$lightPurple: #E4E4FF;
+
+@font-face {
+  font-family: 'Circular';
+  src: url($font-path + 'Circular/CircularStd-Book.eot');
+  src: local('☺'), url($font-path + 'Circular/CircularStd-Book.woff') format('woff'), url($font-path + 'Circular/CircularStd-Book.ttf') format('truetype'), url($font-path + 'Circular/CircularStd-Book.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder { color: #cacaca; } 
+
+body {
+  font-family: 'Circular';
+  background: #f1f1f1;
+}
+
+.wrapper {
+  width: 400px;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  left: 0;
+  background: #FFF;
+  z-index: 10;
+  overflow: scroll;
+  box-shadow: 0px 0px 3px rgba(12, 10, 121, 0.12);
+}
+
+#input {
+  width: 100%;
+  color: blue;
+
+  input {
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #dedede;
+    padding: 18px;
+    width: 100%;
+    font-size: 15px;
+    font-family: 'Circular';
+
+    &:focus {
+      border-bottom: 1px solid $blue;
+      outline: 0;
+    }
+  }
+}
+
+#results {
+  width: 100%;
+  background: white;
+  padding: 0;
+}
+
+footer {
+  font-size: 10px;
+  margin: 50px 0 0 0;
+  text-align: center;
+  opacity: 0;
+}
+
+ul {
+  list-style: none;
+
+  h2 {
+    color: $blue;
+    font-size: 18px;
+    margin-bottom: 2px;
+    font-weight: normal;
+  }
+
+  span.industry {
+    display: block;
+    width: 80%;
+    opacity: .5;
+  }
+
+  .site {
+    border-bottom: 1px solid $blue;
+    color: $blue;
+    padding-bottom: 1px;
+    text-decoration: none;
+    margin-left: 6px;
+    font-size: 12px;
+  }
+
+  .right {
+    position: absolute;
+    right: 28px;
+    display: block;
+    text-align: right;
+    top: 22px;
+
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  li {
+    margin-bottom: 0px;
+    cursor: pointer;
+    padding: 18px 28px;
+    position: relative;
+    border-bottom: 1px solid #F1F1FF;
+
+    header {
+      margin-left: -35px;
+      margin-right: -35px;
+      padding: 0 35px 0 35px;
+    }
+
+    &.empty {
+      font-size: 15px;
+      color: #dedede;
+      text-align: center;
+      border: 0;
+      cursor: default;
+      margin-top: 5px;
+      margin-left: -9px;
+      line-height: 1.5;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    &.expanded {
+      cursor: default;
+      background: $lightPurple;
+
+      &:hover {
+        background: $lightPurple;
+      }
+    }
+
+    &:hover {
+      background: #F9FBFF;
+    }
+  }
+}
+
+
+h3 {
+  margin: 30px 0 15px 0;
+  font-size: 16px;
+
+  span {
+    color: $blue;
+  }
+
+  span.headline {
+    color: #33CA7F;
+  }
+}
+
+h4 {
+  font-size: 15px;
+}
+
+.site {
+  color: $blue;
+  text-decoration: none;
+  margin: 3px 0 0 0;
+  padding-bottom: 1px;
+  border-bottom: 1px solid &blue;
+}
+
+table {
+  border-collapse:collapse;
+  font-size: 14px;
+  width: 100%;
+  font-weight: normal;
+  margin-bottom: 8px;
+
+  &.proscons {
+    margin-top: 13px;
+    margin-bottom: 20px;
+
+    th {
+      width: 50%;
+    }
+
+    tbody th {
+      text-align: left;
+    }
+  }
+
+  th {
+    border: 1px solid #dedede;
+    font-weight: normal;
+    padding: 15px;
+    line-height: 1.5;
+    vertical-align: top;
+
+    &.overall {
+      color: $blue;
+    }
+  }
+
+  td {
+    border:1px solid #dedede;
+  }
+}
+
+.resultsWrap {
+  width: 100%;
+  padding-left: 450px;
+  padding-right: 50px;
+  margin-top: 50px;
+  opacity: 0;
+  transition: opacity .6s ease;
+
+  &.show {
+    opacity: 1;
+  }
+
+  div {
+    background: white;
+    padding: 60px;
+    box-shadow: 0px 0px 3px rgba(12, 10, 121, 0.12);
+
+    .right {
+      position: absolute;
+      right: 110px;
+      display: block;
+      text-align: right;
+      top: 110px;
+
+      img {
+        height: 60px;
+        width: auto;
+      }
+    }
+  }
+
+  .more{
+    border: 1px solid $blue;
+    padding: 12px;
+    border-radius: 30px;
+    text-align: center;
+    color: $blue;
+    margin: 33px auto 0 auto;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    font-size: 15px;
+    max-width: 220px;
+  }
+}
